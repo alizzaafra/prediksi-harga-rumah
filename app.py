@@ -31,8 +31,10 @@ def predict():
 
     # Make a prediction
     prediction = model.predict([user_input])[0]
+    rounded_prediction = int(round(prediction))
 
-    return render_template('result.html', prediction=prediction)
+
+    return render_template('result.html', prediction=rounded_prediction)
 
 if __name__ == '__main__':
     app.run(debug=True)
